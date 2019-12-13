@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAM 16
+ 
+int main(){
+
+  int vetor[TAM]={3,4,9,2,5,8,2,1,7,4,6,2,9,8,5,1};
+  int x = 0, y = 0, aux = 0;      
+
+  
+  printf("Vetor Original:\n-->");
+  printf("%s", "[");
+  for( x = 0; x < TAM; x++ ){
+    printf(" %d ",vetor[x]);
+  }  
+  printf("%s", "]");
+  printf("\n\n");
+
+  printf("Sequência das interações entre os laços (X e Y) para a ordenação do vetor:\n-->\n"); 
+
+  for( x = 0; x < TAM; x++ ){ 
+    printf("\n[%d] ", x);
+      for( y = x + 1; y < TAM; y++ ){
+        printf(" %d ", y);
+        if ( vetor[y] > vetor[x] ){
+         aux = vetor[y];
+         vetor[y] = vetor[x];
+         vetor[x] = aux;
+                        
+      }
+    }
+  } 
+  printf("\n\n Elementos ordenados em Ordem decrescente:\n-->");
+  
+  printf("%s", "[");
+  for( x = 0; x < TAM; x++ ){
+    printf(" %d ",vetor[x]); 
+  }
+  printf("%s", "]");
+  printf("\n");
+
+
+}
+
+
+
+
+
